@@ -7,10 +7,15 @@ console.log(color);
 btn.addEventListener('click', function() {
     let hexColor = "#";
     for (let i = 0; i < 6; i++) {
-        hexColor += hex[0];
+        hexColor += randomNumber(hex);
     }
     // To modify the color reference (text)
     color.textContent = hexColor;
     // Change the background of the body by the hexColor
     document.body.style.backgroundColor = hexColor;
 })
+// To get a random number, return a random elemento from the array
+function randomNumber (array) {
+    let randomNumber = Math.floor(Math.random() * array.length);
+    return array[randomNumber];
+}
