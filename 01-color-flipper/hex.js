@@ -14,7 +14,7 @@ btn.addEventListener('click', function() {
     // Change the background of the body by the hexColor
     document.body.style.backgroundColor = hexColor;
 })
-// To get a random number, return a random elemento from the array
+// To get a random number, return a random element from the array
 function randomNumber (array) {
     let randomNumber = Math.floor(Math.random() * array.length);
     return array[randomNumber];
