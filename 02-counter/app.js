@@ -50,5 +50,12 @@ buttons.forEach((e) =>
       counter = 0;
     }
     counterNumber.textContent = counter;
+    if (counter > 0) {
+      counterNumber.style.color = "green";
+    } else if (counter < 0) {
+      counterNumber.style.color = "red";
+    } else if (counter === 0) {
+      counterNumber.style.color = "black";
+    }
   })
 );
