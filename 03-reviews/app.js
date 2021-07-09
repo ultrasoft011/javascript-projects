@@ -30,6 +30,46 @@ const reviews = [
   },
 ];
 
+// Select items:
+const imgPerson = document.getElementById("person-img");
+const namePerson = document.getElementById("author");
+const jobPerson = document.getElementById("job");
+const infoPerson = document.getElementById("info");
+
+// Select buttons:
+const prevButton = document.querySelector(".prev-btn");
+const nextButton = document.querySelector(".next-btn");
+const randomButton = document.querySelector(".random-btn");
+
+// First content loaded:
+// Load by default variable:
+let currentPerson = 3;
+
+window.addEventListener("DOMContentLoaded", function () {
+  showPerson(currentPerson);
+});
+
+function showPerson(id) {
+  const item = reviews[id];
+  imgPerson.src = item.img;
+  namePerson.textContent = item.name;
+  jobPerson.textContent = item.job;
+  infoPerson.textContent = item.text;
+}
+
+prevButton.addEventListener('click', function () {
+    currentPerson -= 1;
+    if (currentPerson < 0) {
+        currentPerson = (reviews.length) - 1;
+        showPerson(currentPerson);
+    }
+    console.log(`The lenght is: ${(reviews.length) - 1}`);
+    showPerson(currentPerson);
+})
+
+
+
+
 const myArray = reviews.map((element) => {
   console.log(element.img);
 });
