@@ -56,26 +56,27 @@ function showPerson(id) {
   jobPerson.textContent = item.job;
   infoPerson.textContent = item.text;
 }
-
+// Preview Button:
 prevButton.addEventListener("click", function () {
   currentPerson -= 1;
   if (currentPerson < 0) {
     currentPerson = reviews.length - 1;
-    showPerson(currentPerson);
   }
   console.log(`The lenght is: ${reviews.length - 1}`);
   showPerson(currentPerson);
 });
 
+// Next Button:
 nextButton.addEventListener("click", function () {
   currentPerson += 1;
-  if (currentPerson > (reviews.length) - 1) {
+  if (currentPerson > reviews.length - 1) {
     currentPerson = 0;
-    showPerson(currentPerson);
   }
   showPerson(currentPerson);
 });
 
-const myArray = reviews.map((element) => {
-  console.log(element.img);
-});
+// Random Button: 
+randomButton.addEventListener('click', function () {
+    currentPerson = Math.floor(Math.random() * (reviews.length));
+    showPerson(currentPerson);
+})
